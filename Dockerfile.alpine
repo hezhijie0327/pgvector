@@ -18,3 +18,13 @@ RUN apk update && \
 FROM scratch
 
 COPY --from=builder / /
+
+USER postgres
+
+VOLUME /var/lib/postgresql/data
+
+EXPOSE 5432
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["postgres"]
