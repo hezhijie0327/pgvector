@@ -20,9 +20,9 @@ FROM scratch
 COPY --from=builder / /
 
 ENV PGDATA="/var/lib/postgresql/data" \
-    PGPORT="" \
+    PGPORT="5432" \
     POSTGRES_PASSWORD="" \
-    PGUSER=""
+    PGUSER="postgres"
 
 EXPOSE 5432
 
