@@ -4,7 +4,7 @@ COPY . /tmp/pgvector
 
 RUN apk update && \
     apk upgrade --no-cache && \
-    apk add --no-cache -t build-dependencies build-base clang19 llvm15 postgresql-dev && \
+    apk add --no-cache -t build-dependencies build-base clang llvm postgresql-dev && \
     cd /tmp/pgvector && \
     make clean && \
     make OPTFLAGS="" && \
